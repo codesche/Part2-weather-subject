@@ -18,11 +18,11 @@ public class DiaryController {
         this.diaryService = diaryService;
     }
 
-    @PostMapping("/create/diary")
-    void createDiary(@RequestParam @DateTimeFormat(iso = ISO.DATE)
-                    LocalDate date, @RequestBody String text) {
-
-        diaryService.createDiary(date, text);
-    }
+//    @PostMapping("/create/diary")
+//    void createDiary(@RequestParam @DateTimeFormat(iso = ISO.DATE)
+//    LocalDate date, @RequestBody String text) {
+//
+//        diaryService.createDiary(date, text);
+//    }
 
 }
