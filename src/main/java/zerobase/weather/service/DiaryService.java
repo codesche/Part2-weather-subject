@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -48,6 +49,17 @@ public class DiaryService {
         diaryRepository.save(nowDiary);
 
     }
+
+    // 날짜별 날씨일기 조회
+    public List<Diary> readDiary(LocalDate date) {
+        return diaryRepository.findAllByDate(date);
+    }
+
+    // 기간별 날씨일기 조회
+    public List<Diary> readDiaries(LocalDate startDate, LocalDate endDate) {
+        return diaryRepository.findAllByDateBetween(startDate, endDate);
+    }
+
 
     // OpenWeatherMap에서 데이터 받아오기
     private String getWeatherString() {
