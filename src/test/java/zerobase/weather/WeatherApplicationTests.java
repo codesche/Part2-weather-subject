@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest
 class WeatherApplicationTests {
-
+    // 테스트 코드
     @Test
     void sampleTest() {
         assertThat(1, anything());

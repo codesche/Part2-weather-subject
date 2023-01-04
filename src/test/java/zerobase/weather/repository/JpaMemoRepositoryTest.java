@@ -14,7 +14,7 @@ import zerobase.weather.domain.Memo;
 @SpringBootTest
 @Transactional
 class JpaMemoRepositoryTest {
-
+    // 테스트 코드 작성
     @Autowired
     JpaMemoRepository jpaMemoRepository;
 
