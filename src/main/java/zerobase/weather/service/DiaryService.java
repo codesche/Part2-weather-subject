@@ -30,6 +30,7 @@ public class DiaryService {
         this.diaryRepository = diaryRepository;
     }
 
+    // 날씨 일기 생성
     public void createDiary(LocalDate date, String text) {
         // open weather map에서 날씨 데이터 가져오기
         String weatherData = getWeatherString();
@@ -67,6 +68,10 @@ public class DiaryService {
         diaryRepository.save(nowDiary);
     }
 
+    // 날씨일기 삭제
+    public void deleteDiary(LocalDate date) {
+        diaryRepository.deleteAllByDate(date);
+    }
 
     // OpenWeatherMap에서 데이터 받아오기
     private String getWeatherString() {
