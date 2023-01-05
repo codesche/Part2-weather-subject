@@ -60,6 +60,13 @@ public class DiaryService {
         return diaryRepository.findAllByDateBetween(startDate, endDate);
     }
 
+    // 일기 수정
+    public void updateDiary(LocalDate date, String text) {
+        Diary nowDiary = diaryRepository.getFirstByDate(date);
+        nowDiary.setText(text);
+        diaryRepository.save(nowDiary);
+    }
+
 
     // OpenWeatherMap에서 데이터 받아오기
     private String getWeatherString() {
