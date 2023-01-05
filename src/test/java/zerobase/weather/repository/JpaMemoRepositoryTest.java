@@ -19,7 +19,7 @@ class JpaMemoRepositoryTest {
     JpaMemoRepository jpaMemoRepository;
 
     @Test
-    void insertMemoTest () {
+    void insertMemoTest() {
         //given
         Memo newMemo = Memo.builder()
                             .id(10)
@@ -53,6 +53,13 @@ class JpaMemoRepositoryTest {
         Optional<Memo> result = jpaMemoRepository.findById(memo.getId());
         assertEquals(result.get().getText(), "jpa");
 
+    }
+
+    @Test
+    void findAllMemoTest () {
+        List<Memo> memoList = jpaMemoRepository.findAll();
+        System.out.println(memoList);
+        assertNotNull(memoList);
     }
 
 }
